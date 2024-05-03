@@ -21,7 +21,7 @@ def canUnlockAll(boxes):
             if check_if_opened(len(boxes), openedBoxes):
                 return True
 
-    return (False)
+    return (len(boxes) == len(openedBoxes))
 
 
 def check_if_opened(count, listB):
