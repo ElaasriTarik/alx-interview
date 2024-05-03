@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """check if all doors can be opened"""
 
 
