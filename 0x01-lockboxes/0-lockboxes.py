@@ -8,6 +8,7 @@ def canUnlockAll(boxes):
 
     keys = [x for x in boxes[0]]
     openedBoxes = set()
+    openedBoxes.add(0)
 
     while keys:
         key = keys.pop(0)
@@ -16,6 +17,7 @@ def canUnlockAll(boxes):
                 openedBoxes.add(key)
             keys.extend(boxes[key])
             openedBoxes.add(key)
+            
             if check_if_opened(len(boxes), openedBoxes):
                 return True
 
