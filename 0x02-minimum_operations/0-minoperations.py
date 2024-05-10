@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-import math
+
+
 """
 Algorithm file
 """
 
 
 def minOperations(n):
-
     if n == 1:
         return [1]
 
@@ -25,6 +25,7 @@ def minOperations(n):
 
 
 def isPrime(p):
+
     if p < 2:
         return False
     i = 1
