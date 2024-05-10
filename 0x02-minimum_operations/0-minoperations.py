@@ -11,6 +11,8 @@ def minOperations(n):
         return 1
     if isPrime(n):
         return (n)
+    if n < 1:
+        return 0
 
     factors = []
     num = 2
