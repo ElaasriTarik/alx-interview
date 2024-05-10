@@ -9,6 +9,8 @@ Algorithm file
 def minOperations(n):
     if n == 1:
         return [1]
+    if isPrime(n):
+        return (n)
 
     factors = []
     num = 2
