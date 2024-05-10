@@ -14,7 +14,7 @@ def minOperations(n):
 
     factors = []
     num = 2
-    while num**2 <= n:
+    while num**2 < n:
         if n % num == 0:
             factors.append(num)
             n //= num
