@@ -21,10 +21,10 @@ lines_count = 0
 def handle(signum, frame):
     global lines_count
     lines_count = 10
-    print_stats()
+    print_stats(lines_count)
 
 
-def print_stats():
+def print_stats(count=lines_count):
     global lines_count, sizes
     if lines_count == 10:
         print("File size: ", sizes, end="\n")
@@ -38,12 +38,13 @@ signal.signal(signal.SIGINT, handle)
 
 while True:
     try:
+        if lines_count == 10:
+            print_stats(lines_count)
         line = sys.stdin.readline()
         line = line.split()
         if len(line) >= 9:
             sizes += int(line[8])
             codes[line[7]] += 1
             lines_count += 1
-            print_stats()
     except KeyboardInterrupt:
         continue
