@@ -3,29 +3,29 @@
 
 
 def validUTF8(data):
-    count = 0
+    record = 0
     for d in data:
-        if not count:
-            count = countOne(d)
-            if count == 0:
+        if not record:
+            record = recordOne(d)
+            if record == 0:
                 continue
-            if count == 1 or count > 4:
+            if record == 1 or record > 4:
                 return False
-            count -= 1
+            record -= 1
         else:
-            count -= 1
-            if countOne(d) != 1:
+            record -= 1
+            if recordOne(d) != 1:
                 return False
-    return count == 0
+    return record == 0
 
 
-def countOne(num):
-        count = 0
-        
-        for i in range(7, -1, -1):
-            #print(bin(num), bin(num << i))
-            if num & (1 << i):
-                count += 1
-            else:
-                break
-        return count
+def recordOne(num):
+    record = 0
+
+    for i in range(7, -1, -1):
+        # print(bin(num), bin(num << i))
+        if num & (1 << i):
+            record += 1
+        else:
+            break
+    return record
