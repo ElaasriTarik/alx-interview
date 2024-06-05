@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
+const url = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2];
 request(url, async function (error, response, body) {
   if (error) return (error);
 
@@ -10,8 +10,10 @@ request(url, async function (error, response, body) {
 });
 
 function printCharacters (characters) {
-  for (const character in characters) {
-    const url = 'https://swapi-api.hbtn.io/api/people/' + character;
+  // console.log(characters)
+  for (const character of characters) {
+    if (character === undefined) { return; }
+    const url = character;
     request(url, async function (error, response, body) {
       if (error) return (error);
 
