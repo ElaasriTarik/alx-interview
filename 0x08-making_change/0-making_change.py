@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+"""
+makeChange function
+"""
 
 
-"[1, 2, 25], 50"
-"[1256, 54, 48, 16, 102], 1453"
 def makeChange(coins, total):
     if total <= 0:
         return (0)
