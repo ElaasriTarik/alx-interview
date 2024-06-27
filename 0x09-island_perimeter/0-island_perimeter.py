@@ -5,6 +5,8 @@
 
 
 def island_perimeter(grid):
+    """island perimeter function"""
+
     max_len = len(grid[0]) - 1
     perimeter = 0
 
@@ -27,6 +29,7 @@ def island_perimeter(grid):
                 perimeter += 1
 
     return perimeter
+
 
 if __name__ == "__main__":
     island_perimeter()
