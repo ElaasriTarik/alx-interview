@@ -10,23 +10,21 @@ def island_perimeter(grid):
     max_len = len(grid[0])
     perimeter = 0
 
-    for arr in range(max_len - 1):
+    for arr in range(len(grid)):
         for i in range(0, max_len):
             # check first and last lands
             if grid[arr][i] == 1:
-                if i == 0 or i == max_len:
+                # Check left edge or left cell is water
+                if i == 0 or grid[arr][i - 1] == 0:
                     perimeter += 1
-                # check next land
-                if grid[arr][i + 1] == 0:
+                # Check right edge or right cell is water
+                if i == max_len - 1 or grid[arr][i + 1] == 0:
                     perimeter += 1
-                # check prev land
-                if grid[arr][i - 1] == 0:
+                # Check top edge or top cell is water
+                if arr == 0 or grid[arr - 1][i] == 0:
                     perimeter += 1
-                # check the top land
-                if grid[arr - 1][i] == 0:
-                    perimeter += 1
-                # check the bottom land
-                if grid[arr + 1][i] == 0:
+                # Check bottom edge or bottom cell is water
+                if arr == len(grid) - 1 or grid[arr + 1][i] == 0:
                     perimeter += 1
 
     return perimeter
