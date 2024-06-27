@@ -27,3 +27,6 @@ def island_perimeter(grid):
                 perimeter += 1
 
     return perimeter
+
+if __name__ == "__main__":
+    island_perimeter()
