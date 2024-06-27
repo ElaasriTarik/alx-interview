@@ -14,7 +14,6 @@ def island_perimeter(grid):
         for i in range(0, max_len):
             # check first and last lands
             if grid[arr][i] == 1:
-                
                 # check first cell or the prev
                 if i == 0 or grid[arr][i - 1] == 0:
                     perimeter += 1
