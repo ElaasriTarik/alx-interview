@@ -9,21 +9,17 @@ def isWinner(x, nums):
 
     maria = 0
     ben = 0
-
-    def simulation(n):
-        primes = sieve_of_eratosthenes(n)
-        moves = sum(primes)
-        return moves % 2 == 1
-
-    for n in nums[:x]:
-        if simulation(n):
-            maria += 1
-        else:
+    for i in range(x):
+        primeNos = sieve_of_eratosthenes(nums[i])
+        if len(primeNos) % 2 == 0:
             ben += 1
-
-    if maria == ben:
-        return None
-    return "Maria" if maria > ben else "Ben"
+        else:
+            maria += 1
+    if maria > ben:
+        return 'Maria'
+    elif ben > maria:
+        return 'Ben'
+    return None
 
 
 def is_prime(n):
