@@ -16,10 +16,8 @@ def isWinner(x, nums):
         else:
             maria += 1
     if maria > ben:
-        return 'Maria'
-    elif ben > maria:
-        return 'Ben'
-    return None
+        return "Maria"
+    return "Maria" if maria > ben else "Ben" if ben > maria else None
 
 
 def is_prime(n):
