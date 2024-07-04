@@ -3,9 +3,9 @@
 
 
 def isWinner(x, nums):
+    """determine who the winner of the game is."""
     maria = 0
     ben = 0
-    """Determine the winner of the game."""
     for turn in range(x):
         prime_num = None
         for number in nums:
