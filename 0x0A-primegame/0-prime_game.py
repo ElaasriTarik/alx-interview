@@ -33,10 +33,11 @@ def is_prime(n):
 
 
 def sieve_of_eratosthenes(n):
-    primes = [True] * (n + 1)
-    primes[0] = primes[1] = False
-    for i in range(2, int(n**0.5) + 1):
-        if primes[i]:
-            for j in range(i*i, n+1, i):
-                primes[j] = False
-    return primes
+    primeNos = []
+    filtered = [True] * (n + 1)
+    for prime in range(2, n + 1):
+        if (filtered[prime]):
+            primeNos.append(prime)
+            for i in range(prime, n + 1, prime):
+                filtered[i] = False
+    return primeNos
