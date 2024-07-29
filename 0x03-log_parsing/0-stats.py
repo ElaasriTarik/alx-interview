@@ -32,7 +32,7 @@ def print_stats():
     global sizes, codes
     print(f"File size: {sizes}")
     for code, count in codes.items():
-        if count > 0:
+        if count != 0:
             print(f"{code}: {count}")
 
 
