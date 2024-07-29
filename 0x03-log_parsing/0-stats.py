@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 """
-    script that reads stdin line by line
+Script that reads stdin line by line and handles HTTP status code statistics.
 """
-
 
 import sys
 import signal
-
 
 sizes = 0
 codes = {
@@ -18,32 +16,30 @@ codes = {
     "404": 0,
     "405": 0,
     "500": 0
-    }
+}
 lines_count = 0
 
 
 def handle(signum, frame):
-    '''handling signal'''
-
+    """Handles the signal and prints statistics."""
     global lines_count
-    lines_count = 10
-    print_stats(lines_count)
+    print_stats()
+    lines_count = 0
 
 
-def print_stats(count=lines_count):
-    '''print stats'''
-
-    global lines_count, sizes
-    if lines_count == 10:
-        print("File size: ", sizes, end="\n")
-        for k, v in codes.items():
-            print(f"{k}: {v}")
-        lines_count = 0
+def print_stats():
+    """Prints the statistics of HTTP status codes."""
+    global sizes, codes
+    print(f"File size: {sizes}")
+    for code, count in codes.items():
+        if count > 0:
+            print(f"{code}: {count}")
 
 
+# Register the signal handler
 signal.signal(signal.SIGINT, handle)
 
-while True:
+for line in sys.stdin:
     try:
         if lines_count == 10:
             print_stats(lines_count)
