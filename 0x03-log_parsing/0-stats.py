@@ -41,13 +41,13 @@ signal.signal(signal.SIGINT, handle)
 
 for line in sys.stdin:
     try:
-        if lines_count == 10:
-            print_stats(lines_count)
         line = sys.stdin.readline()
         line = line.split()
         if len(line) >= 9:
             sizes += int(line[8])
             codes[line[7]] += 1
             lines_count += 1
+        if lines_count == 10:
+            print_stats(lines_count)
     except KeyboardInterrupt:
         continue
