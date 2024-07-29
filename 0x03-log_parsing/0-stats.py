@@ -1,5 +1,11 @@
 #!/usr/bin/python3
-"""log parsing """
+"""
+This module provides functionality to handle and print HTTP status code statistics.
+
+Functions:
+    handle(signum, frame): Handles a signal and prints statistics.
+    print_stats(count=lines_count): Prints the statistics of HTTP status codes.
+"""
 import sys
 import signal
 
