@@ -5,7 +5,7 @@
 def pascal_triangle(n):
     '''pascal triangle generating function'''
     if n == 0:
-      return []
+        return []
 
     triangle = []
 
