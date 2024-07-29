@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+'''Log parsing script'''
 import random
 import sys
 from time import sleep
 import datetime
+
 
 for i in range(10000):
     sleep(random.random())

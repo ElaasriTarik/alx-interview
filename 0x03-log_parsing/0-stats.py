@@ -19,12 +19,16 @@ lines_count = 0
 
 
 def handle(signum, frame):
+    '''handling signal'''
+
     global lines_count
     lines_count = 10
     print_stats(lines_count)
 
 
 def print_stats(count=lines_count):
+    '''print stats'''
+
     global lines_count, sizes
     if lines_count == 10:
         print("File size: ", sizes, end="\n")
@@ -34,7 +38,6 @@ def print_stats(count=lines_count):
 
 
 signal.signal(signal.SIGINT, handle)
-
 
 while True:
     try:
